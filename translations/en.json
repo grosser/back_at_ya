@@ -2,7 +2,8 @@
   "app": {
     "description":  "Agents can rate users",
     "name":         "Agent Satisfaction App",
-    "help":         "How would you rate your experience with this customer? <br /> Click a star to choose your rating: 5 = Extremeley Satisfied and 1 = Extremely Dissastisfied.  <br />",
-  
-  }
+    "help":         "How would you rate your experience with this customer? <br /> Click a star to choose your rating: 5 = Extremeley Satisfied and 1 = Extremely Dissastisfied.  <br />"
+  },
+  "rate_success": "Rating saved",
+  "rate_error_request": "Error saving rating"
 }

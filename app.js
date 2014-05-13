@@ -1,7 +1,15 @@
 (function() {
   return {
     requests: {
-      rate: function(data, user_id) {
+      load: function(user_id) {
+        return {
+          url: helpers.fmt('/api/v2/users/%@.json', user_id),
+          dataType: 'JSON',
+          type: 'GET',
+          contentType: 'application/json'
+        };
+      },
+      save: function(user_id, data) {
         return {
           url: helpers.fmt('/api/v2/users/%@.json', user_id),
           dataType: 'JSON',
@@ -17,40 +25,39 @@
     },
 
     init: function() {
-      this.switchTo('form');
-      this.rateit(this.$, this.currentUser().id().customField("agent_satisfaction_average"));
+      var requester = this.ticket().requester();
+      if(requester){
+        this._handleRequest(this.ajax('load', requester.id()), function(data){
+          this.requester = data.user;
+          this.switchTo('form');
+          this.rateit(this.$);
+        }, this.notifyFail);
+      } else {
+        alert("TODO NO REQUESTER");
+      }
     },
 
-    rateit: function($, current){
+    rateit: function($){
       var jQuery = $;
       var self = this;
+      var current = this.requester.user_fields.agent_satisfaction_average;
 
       var rating = function(container) {
         var settings = {
           maxvalue  : 5,   // max number of stars
-          curvalue  : Math.round(current || 0),    // number of selected stars
-          cancel: true
+          curvalue  : Math.round(current || 0) // number of selected stars
         };
 
         container.averageRating = settings.curvalue;
 
-        for(var i= 0; i <= settings.maxvalue ; i++){
+        for(var i= 1; i <= settings.maxvalue ; i++){
           var div;
           var size = i;
-          if (i === 0) {
-            if(settings.cancel === true){
-              div = '<div class="cancel"><a href="#0" title="Cancel Rating">Cancel Rating</a></div>';
-              container.append(div);
-            }
-          }
-          else {
-            div = '<div class="star"><a href="#'+i+'" title="Give it '+i+'/'+size+'">'+i+'</a></div>';
-            container.append(div);
-          }
+          div = '<div class="star"><a href="#'+i+'" title="Give it '+i+'/'+size+'">'+i+'</a></div>';
+          container.append(div);
         }
 
         var stars = container.children('.star');
-        var cancel = container.children('.cancel');
 
         stars
           .mouseover(function(){
@@ -71,43 +78,11 @@
           });
 
         stars.click(function(){
-          if(settings.cancel === true){
-            settings.curvalue = stars.index(this) + 1;
-            var rating = jQuery(this).children('a')[0].href.split('#')[1];
-            self.submitRating(rating);
-            return false;
-          }
-          return true;
+          settings.curvalue = stars.index(this) + 1;
+          var rating = jQuery(this).children('a')[0].href.split('#')[1];
+          self.submitRating(rating);
+          return false;
         });
-
-        // cancel button events
-        if(cancel){
-          cancel
-            .mouseover(function(){
-              event.drain();
-              jQuery(this).addClass('on');
-            })
-            .mouseout(function(){
-              event.reset();
-              jQuery(this).removeClass('on');
-            })
-            .focus(function(){
-              event.drain();
-              jQuery(this).addClass('on');
-            })
-            .blur(function(){
-              event.reset();
-              jQuery(this).removeClass('on');
-            });
-
-          // click events.
-          cancel.click(function(){
-            event.drain();
-            settings.curvalue = 0;
-            console.log("--->", {"rating": jQuery(this).children('a')[0].href.split('#')[1]});
-            return false;
-          });
-        }
 
         var event = {
           fill: function(el){ // fill to the current mouse position.
@@ -134,16 +109,20 @@
 
     submitRating: function(rating){
       var mine = ";" + this.currentUser().id() + "," + this.ticket().id() + ",";
-      var ratings = (this.currentUser().customField("agent_satisfaction") || "").replace(new RegExp(mine + "\\d"), "");
+      var ratings = (this.requester.user_fields.agent_satisfaction || "").replace(new RegExp(mine + "\\d"), "");
       ratings += mine + rating;
       var average = this.average(ratings);
 
-      console.log("---> ratings", ratings, average);
-//      var ticket_id = this.ticket().id();
-//      var data = { "user": { "custom_fields": { "agent_satisfaction": ratings, "agent_satisfaction_average": average } } };
-      this.currentUser().customField("agent_satisfaction", ratings);
-      this.currentUser().customField("agent_satisfaction_average", average);
-//      this._handleRequests([this.ajax('rate', data, this.currentUser().id())]);
+      var data = {
+        "user": {
+          "user_fields": {
+            "agent_satisfaction": ratings,
+            "agent_satisfaction_average": average
+          }
+        }
+      };
+
+      this._handleRequest(this.ajax('save', this.requester.id, data), this.notifySuccess, this.notifyFail);
     },
 
     average: function(ratings){
@@ -158,13 +137,9 @@
       return sum / ratings.length;
     },
 
-    _handleRequests: function(requests) {
-      this.when.apply(this, requests).done(_.bind(function(){
-          this.notifySuccess();
-        }, this))
-        .fail(_.bind(function(){
-          this.notifyFail();
-        }, this));
+    _handleRequest: function(request, success, fail) {
+      this.when.apply(this, [request]).done(_.bind(success, this))
+        .fail(_.bind(fail, this));
     },
 
     notifySuccess: function() {
