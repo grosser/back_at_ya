@@ -2,7 +2,7 @@
   "app": {
     "description":  "Agents can rate users",
     "name":         "Agent Satisfaction App",
-    "help":         "How would you rate this customer? <br /> Use ASAT (agent satisfaction) to rate your customers, analyze the data, and build business rules around it. <br /> Click a star to choose your rating and get an agent average for this customer <br /> But there's more: build out a view of your lowest rated customers or create business rules to provide VIP treatment to those who have been rated poorly. The options are endless!  <br />",
+    "help":         "How would you rate this customer? <br /> Use ASAT (agent satisfaction) to rate your customers, analyze the data, and build business rules around them. <br /> Click a star to choose your rating, it will be added as a custom field, and see the agent average for this customer <br /> But there's more! Build out a view of your lowest rated customers or create business rules around them. The options are endless!  <br />",
   
   }
 }
