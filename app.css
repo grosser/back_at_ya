@@ -1,5 +1,12 @@
-a {
-  color: red;
+.faq{
+  float: right;
+  width: 15px;
+  line-height: 26px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.faq_content {
+  display: none;
 }
 
 .rating {

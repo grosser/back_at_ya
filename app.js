@@ -21,7 +21,8 @@
     },
 
     events: {
-      'app.activated': 'init'
+      'app.activated': 'init',
+      'click .faq': 'faq'
     },
 
     init: function() {
@@ -35,6 +36,11 @@
       } else {
         alert("TODO NO REQUESTER");
       }
+    },
+
+    // toggle the faq page
+    faq: function(){
+      this.$(".form, .faq_content").toggle();
     },
 
     rateit: function($){

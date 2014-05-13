@@ -1,5 +1,6 @@
 <header>
   <span class="logo"/>
+  <span class="faq">?</span>
   <h3>{{setting "name"}}</h3>
 </header>
 <section data-main/>
