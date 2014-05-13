@@ -2,7 +2,7 @@
   "app": {
     "description":  "Agents can rate users",
     "name":         "Agent Satisfaction App",
-    "help":         "Not sure what you do with this?" <br /> Click on the star rating for how you feel this customer should be rated based on your current interaction <br />,
+    "help":         "Not sure what you do with this?" <br /> <strong> Click on the star rating for how you feel this customer should be rated based on your current interaction <strong> <br />,
   
   }
 }
