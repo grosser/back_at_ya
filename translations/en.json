@@ -2,7 +2,7 @@
   "app": {
     "description":  "Agents can rate users",
     "name":         "Agent Satisfaction App",
-    "help":         "Not sure what you do with this? <br /> Click on the star rating for how you feel this customer should be rated based on your current interaction <br />",
+    "help":         "How would you rate this customer? <br /> Use ASAT (agent satisfaction) to rate your customers. <br /> Choose your star rating and get an agent average <br /> Now what? Build out a view of your lowest rated customers <br />",
   
   }
 }
