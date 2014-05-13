@@ -24,7 +24,7 @@ table td, table th{
   margin-right: 8px;
 }
 
-.faq_content, .rating_list {
+.faq_content, .rating_list, .field_error {
   display: none;
 }
 

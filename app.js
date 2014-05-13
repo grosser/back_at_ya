@@ -42,9 +42,14 @@
       if(requester){
         this.loading(this.$(".rating"));
         this._handleRequest(this.ajax('load', requester.id()), function(data){
-          this.requester = data.user;
           this.switchTo('form');
-          this.rateit(this.$);
+          if(data.user.user_fields.agent_satisfaction !== undefined && data.user.user_fields.agent_satisfaction_average !== undefined){
+            this.requester = data.user;
+            this.rateit(this.$);
+          } else {
+            this.$(".rating").hide();
+            this.$(".field_error").show();
+          }
         }, this.notifyFail);
       } else {
         alert("TODO NO REQUESTER");

@@ -9,8 +9,12 @@
       {{t "be_the_first_to_rate"}}
     </div>
     <div class="rating_list"></div>
-  </div>
-  <div class="faq_content">
-    {{{t "app.help"}}}
+    </div>
+    <div class="faq_content">
+      {{{t "help"}}}
+    </div>
+    <div class="field_error">
+      {{{t "field_error"}}}
+    </div>
   </div>
 </section>
