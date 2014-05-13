@@ -62,7 +62,7 @@
         this.loading(dom);
 
         // get ids of all raters
-        var ratings = (this.requester.user_fields.agent_satisfaction || "").replace(";", "").split(";");
+        var ratings = this.ratings.replace(";", "").split(";");
         var ids = [];
         for(var x = 0; x < ratings.length; x ++) {
           ids.push(ratings[x].split(",")[0]);
@@ -102,12 +102,12 @@
       var jQuery = $;
       var self = this;
       var current = this.requester.user_fields.agent_satisfaction_average || 0;
-      var ratings = (this.requester.user_fields.agent_satisfaction || "");
+      this.ratings = (this.requester.user_fields.agent_satisfaction || "");
       var container = $(".rating");
-      this.updateAverage(ratings, current);
+      this.updateAverage(this.ratings, current);
 
       // show my rating if I have rated
-      var match = ratings.match(new RegExp(this.mine() + "(\\d)"));
+      var match = this.ratings.match(new RegExp(this.mine() + "(\\d)"));
       if(match){
         current = parseInt(match[1], 10);
         container.addClass("mine");
@@ -187,17 +187,18 @@
     },
 
     submitRating: function(rating){
+      if(this.showingList){ this.list(); } // close the list so we do not show inconsistent data
+
       var mine = this.mine();
-      var ratings = (this.requester.user_fields.agent_satisfaction || "").replace(new RegExp(mine + "\\d"), "");
-      ratings += mine + rating;
-      this.requester.user_fields.agent_satisfaction_average = ratings;
-      var average = this.average(ratings);
-      this.updateAverage(ratings, average);
+      this.ratings = this.ratings.replace(new RegExp(mine + "\\d"), "");
+      this.ratings += mine + rating;
+      var average = this.average(this.ratings);
+      this.updateAverage(this.ratings, average);
 
       var data = {
         "user": {
           "user_fields": {
-            "agent_satisfaction": ratings,
+            "agent_satisfaction": this.ratings,
             "agent_satisfaction_average": average
           }
         }
