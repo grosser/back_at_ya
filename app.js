@@ -42,7 +42,18 @@
       var self = this;
       var current = this.requester.user_fields.agent_satisfaction_average;
 
+      var match = (this.requester.user_fields.agent_satisfaction || "").match(new RegExp(this.mine() + "(\\d)"));
+      var myrating;
+      if(match){
+        current = parseInt(match[1], 10);
+        myrating = true;
+      }
+
       var rating = function(container) {
+        if(myrating){
+          container.addClass("mine");
+        }
+
         var settings = {
           maxvalue  : 5,   // max number of stars
           curvalue  : Math.round(current || 0) // number of selected stars
@@ -81,6 +92,7 @@
           settings.curvalue = stars.index(this) + 1;
           var rating = jQuery(this).children('a')[0].href.split('#')[1];
           self.submitRating(rating);
+          container.addClass("mine");
           return false;
         });
 
@@ -107,8 +119,12 @@
       rating($(".rating"));
     },
 
+    mine: function(){
+      return ";" + this.currentUser().id() + "," + this.ticket().id() + ",";
+    },
+
     submitRating: function(rating){
-      var mine = ";" + this.currentUser().id() + "," + this.ticket().id() + ",";
+      var mine = this.mine();
       var ratings = (this.requester.user_fields.agent_satisfaction || "").replace(new RegExp(mine + "\\d"), "");
       ratings += mine + rating;
       var average = this.average(ratings);
