@@ -138,7 +138,7 @@
       for(var i= 1; i <= settings.maxvalue ; i++){
         var div;
         var size = i;
-        div = '<div class="star"><a href="#'+i+'" title="Give it '+i+'/'+size+'">'+i+'</a></div>';
+        div = '<div class="star"><a href="#'+i+'" title="'+ this.I18n.t("give_it_stars") +i+'/'+size+'">'+i+'</a></div>';
         container.append(div);
       }
 
