@@ -1,29 +1,38 @@
 (function() {
   return {
+    requests: {
+      rate: function(data, user_id) {
+        return {
+          url: helpers.fmt('/api/v2/users/%@.json', user_id),
+          dataType: 'JSON',
+          type: 'PUT',
+          contentType: 'application/json',
+          data: JSON.stringify(data)
+        };
+      }
+    },
+
     events: {
-      'app.activated': 'init',
+      'app.activated': 'init'
     },
 
     init: function() {
       this.switchTo('form');
-      this.rateit(this.$);
+      this.rateit(this.$, this.currentUser().id().customField("agent_satisfaction_average"));
     },
 
-    rateit: function($){
+    rateit: function($, current){
       var jQuery = $;
+      var self = this;
 
-      var rating = function(container, url, options) {
-        if(url == null) alert();
-
+      var rating = function(container) {
         var settings = {
-          url       : url, // post changes to
           maxvalue  : 5,   // max number of stars
-          curvalue  : 0,    // number of selected stars
+          curvalue  : Math.round(current || 0),    // number of selected stars
           cancel: true
         };
 
         container.averageRating = settings.curvalue;
-        container.url = settings.url;
 
         for(var i= 0; i <= settings.maxvalue ; i++){
           var div;
@@ -64,17 +73,11 @@
         stars.click(function(){
           if(settings.cancel === true){
             settings.curvalue = stars.index(this) + 1;
-            console.log("--->", {"rating": jQuery(this).children('a')[0].href.split('#')[1]});
-            return false;
-          }
-          else if(settings.maxvalue == 1){
-            settings.curvalue = (settings.curvalue === 0) ? 1 : 0;
-            $(this).toggleClass('on');
-            console.log("--->", {"rating": jQuery(this).children('a')[0].href.split('#')[1]});
+            var rating = jQuery(this).children('a')[0].href.split('#')[1];
+            self.submitRating(rating);
             return false;
           }
           return true;
-
         });
 
         // cancel button events
@@ -126,7 +129,50 @@
 
         return(this);
       };
-      rating($(".rating"), "http://foobar.com");
+      rating($(".rating"));
+    },
+
+    submitRating: function(rating){
+      var mine = ";" + this.currentUser().id() + "," + this.ticket().id() + ",";
+      var ratings = (this.currentUser().customField("agent_satisfaction") || "").replace(new RegExp(mine + "\\d"), "");
+      ratings += mine + rating;
+      var average = this.average(ratings);
+
+      console.log("---> ratings", ratings, average);
+//      var ticket_id = this.ticket().id();
+//      var data = { "user": { "custom_fields": { "agent_satisfaction": ratings, "agent_satisfaction_average": average } } };
+      this.currentUser().customField("agent_satisfaction", ratings);
+      this.currentUser().customField("agent_satisfaction_average", average);
+//      this._handleRequests([this.ajax('rate', data, this.currentUser().id())]);
+    },
+
+    average: function(ratings){
+      ratings = ratings.replace(";","").split(";");
+      var sum = 0;
+      var els;
+      for(var x = 0; x < ratings.length; x ++) {
+        els = ratings[x].split(",");
+        sum += parseInt(els[els.length - 1], 10);
+      }
+
+      return sum / ratings.length;
+    },
+
+    _handleRequests: function(requests) {
+      this.when.apply(this, requests).done(_.bind(function(){
+          this.notifySuccess();
+        }, this))
+        .fail(_.bind(function(){
+          this.notifyFail();
+        }, this));
+    },
+
+    notifySuccess: function() {
+      services.notify(this.I18n.t('rate_success'));
+    },
+
+    notifyFail: function() {
+      services.notify(this.I18n.t('rate_error_request'), 'error');
     }
   };
 }());
