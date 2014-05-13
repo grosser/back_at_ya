@@ -1,2 +1,4 @@
 <section data-main>
+  <input type="hidden" class="backing">
+  <div class="rating">&nbsp;</div>
 </section>
