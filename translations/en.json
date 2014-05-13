@@ -2,7 +2,7 @@
   "app": {
     "description":  "Agents can rate users",
     "name":         "Agent Satisfaction App",
-    "help":         "How would you rate your experience with this customer? <br /> Click a star to choose your rating: 5 = Extremeley Satisfied and 1 = Extremely Dissastisfied.  <br />"
+    "help":         "How would you rate your experience with this customer?<br />Click a star to choose your rating:<br />5 = Extremeley Satisfied<br />1 = Extremely Dissastisfied<br /><br />Ratings are stored in the user field agent_satisfaction and rating average is stored in agent_satisfaction_average (for views, triggers, reporting)."
   },
   "average": "Average",
   "ratings": "Ratings",
