@@ -40,87 +40,89 @@
     rateit: function($){
       var jQuery = $;
       var self = this;
-      var current = this.requester.user_fields.agent_satisfaction_average;
+      var current = this.requester.user_fields.agent_satisfaction_average || 0;
+      var ratings = (this.requester.user_fields.agent_satisfaction || "");
+      var container = $(".rating");
+      this.updateAverage(ratings, current);
 
-      var match = (this.requester.user_fields.agent_satisfaction || "").match(new RegExp(this.mine() + "(\\d)"));
-      var myrating;
+      // show my rating if I have rated
+      var match = ratings.match(new RegExp(this.mine() + "(\\d)"));
       if(match){
         current = parseInt(match[1], 10);
-        myrating = true;
+        container.addClass("mine");
       }
 
-      var rating = function(container) {
-        if(myrating){
-          container.addClass("mine");
-        }
+      // Rest
+      var settings = {
+        maxvalue  : 5,   // max number of stars
+        curvalue  : Math.round(current || 0) // number of selected stars
+      };
 
-        var settings = {
-          maxvalue  : 5,   // max number of stars
-          curvalue  : Math.round(current || 0) // number of selected stars
-        };
+      container.averageRating = settings.curvalue;
 
-        container.averageRating = settings.curvalue;
+      for(var i= 1; i <= settings.maxvalue ; i++){
+        var div;
+        var size = i;
+        div = '<div class="star"><a href="#'+i+'" title="Give it '+i+'/'+size+'">'+i+'</a></div>';
+        container.append(div);
+      }
 
-        for(var i= 1; i <= settings.maxvalue ; i++){
-          var div;
-          var size = i;
-          div = '<div class="star"><a href="#'+i+'" title="Give it '+i+'/'+size+'">'+i+'</a></div>';
-          container.append(div);
-        }
+      var stars = container.children('.star');
 
-        var stars = container.children('.star');
-
-        stars
-          .mouseover(function(){
-            event.drain();
-            event.fill(this);
-          })
-          .mouseout(function(){
-            event.drain();
-            event.reset();
-          })
-          .focus(function(){
-            event.drain();
-            event.fill(this);
-          })
-          .blur(function(){
-            event.drain();
-            event.reset();
-          });
-
-        stars.click(function(){
-          settings.curvalue = stars.index(this) + 1;
-          var rating = jQuery(this).children('a')[0].href.split('#')[1];
-          self.submitRating(rating);
-          container.addClass("mine");
-          return false;
+      stars
+        .mouseover(function(){
+          event.drain();
+          event.fill(this);
+        })
+        .mouseout(function(){
+          event.drain();
+          event.reset();
+        })
+        .focus(function(){
+          event.drain();
+          event.fill(this);
+        })
+        .blur(function(){
+          event.drain();
+          event.reset();
         });
 
-        var event = {
-          fill: function(el){ // fill to the current mouse position.
-            var index = stars.index(el) + 1;
-            stars
-              .children('a').css('width', '100%').end()
-              .slice(0, index).addClass('hover').end();
-          },
-          drain: function() { // drain all the stars.
-            stars
-              .filter('.on').removeClass('on').end()
-              .filter('.hover').removeClass('hover').end();
-          },
-          reset: function(){ // Reset the stars to the default index.
-            stars.slice(0, settings.curvalue).addClass('on').end();
-          }
-        };
-        event.reset();
+      stars.click(function(){
+        settings.curvalue = stars.index(this) + 1;
+        var rating = jQuery(this).children('a')[0].href.split('#')[1];
+        self.submitRating(rating);
+        container.addClass("mine");
+        return false;
+      });
 
-        return(this);
+      var event = {
+        fill: function(el){ // fill to the current mouse position.
+          var index = stars.index(el) + 1;
+          stars
+            .children('a').css('width', '100%').end()
+            .slice(0, index).addClass('hover').end();
+        },
+        drain: function() { // drain all the stars.
+          stars
+            .filter('.on').removeClass('on').end()
+            .filter('.hover').removeClass('hover').end();
+        },
+        reset: function(){ // Reset the stars to the default index.
+          stars.slice(0, settings.curvalue).addClass('on').end();
+        }
       };
-      rating($(".rating"));
+      event.reset();
     },
 
     mine: function(){
       return ";" + this.currentUser().id() + "," + this.ticket().id() + ",";
+    },
+
+    updateAverage: function(ratings, average){
+      this.$(".average-overview").toggle(average !== 0);
+      this.$(".average-first").toggle(average === 0);
+      this.$(".average").html(average);
+      this.$(".ratings_count").html(ratings.split(";").length - 1);
     },
 
     submitRating: function(rating){
@@ -128,6 +130,7 @@
       var ratings = (this.requester.user_fields.agent_satisfaction || "").replace(new RegExp(mine + "\\d"), "");
       ratings += mine + rating;
       var average = this.average(ratings);
+      this.updateAverage(ratings, average);
 
       var data = {
         "user": {

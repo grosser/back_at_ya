@@ -1,4 +1,10 @@
 <section data-main>
   <input type="hidden" class="backing">
   <div class="rating">&nbsp;</div>
+  <div class="average-overview">
+    {{t "average"}} <span class="average"></span>/<span class="ratings_count"></span> {{t "ratings"}}
+  </div>
+  <div class="average-first">
+    {{t "be_the_first_to_rate"}}
+  </div>
 </section>

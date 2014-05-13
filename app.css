@@ -45,3 +45,6 @@ div.rating div a:hover {
   background-position: 0 -16px; // red
 }
 
+.average-first, .average-overview{
+  display: none;
+}

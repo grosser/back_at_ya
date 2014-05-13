@@ -4,6 +4,9 @@
     "name":         "Agent Satisfaction App",
     "help":         "How would you rate your experience with this customer? <br /> Click a star to choose your rating: 5 = Extremeley Satisfied and 1 = Extremely Dissastisfied.  <br />"
   },
+  "average": "Average",
+  "ratings": "Ratings",
+  "be_the_first_to_rate": "Be the first to rate!",
   "rate_success": "Rating saved",
   "rate_error_request": "Error saving rating"
 }
