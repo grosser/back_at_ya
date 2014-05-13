@@ -17,3 +17,10 @@ An app which uses the below endpoints:
 ## Set-up/installation instructions:
 
 Download asat.zip, install it, then open a ticket.
+
+## TO-DO FOR README: 
+- Download instructions 
+- Installation instructions 
+- Ideally links to the pages (go to this page, click here, it goes there, fills in, blah) 
+- Screenshot of installation 
+- Screenshot of app in action 
