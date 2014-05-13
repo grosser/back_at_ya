@@ -18,6 +18,12 @@ table td, table th{
   cursor: pointer;
 }
 
+.play {
+  float: right;
+  height: 25px;
+  margin-right: 8px;
+}
+
 .faq_content, .rating_list {
   display: none;
 }
