@@ -1,0 +1,6 @@
+{
+  "app": {
+    "description":  "Agents can rate users",
+    "name":         "Agent Satisfaction App"
+  }
+}
