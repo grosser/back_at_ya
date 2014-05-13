@@ -36,6 +36,8 @@
 
     init: function() {
       var requester = this.ticket().requester();
+      this.$(".heading").html(this.I18n.t("rate_requester") + requester.name());
+
       if(requester){
         this.loading(this.$(".rating"));
         this._handleRequest(this.ajax('load', requester.id()), function(data){
