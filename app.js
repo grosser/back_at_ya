@@ -17,17 +17,27 @@
           contentType: 'application/json',
           data: JSON.stringify(data)
         };
+      },
+      many: function(user_ids){
+        return {
+          url: helpers.fmt('/api/v2/users/show_many.json?ids=%@', user_ids),
+          dataType: 'JSON',
+          type: 'GET',
+          contentType: 'application/json'
+        };
       }
     },
 
     events: {
       'app.activated': 'init',
-      'click .faq': 'faq'
+      'click .faq': 'faq',
+      'click .list_ratings': 'list'
     },
 
     init: function() {
       var requester = this.ticket().requester();
       if(requester){
+        this.loading(this.$(".rating"));
         this._handleRequest(this.ajax('load', requester.id()), function(data){
           this.requester = data.user;
           this.switchTo('form');
@@ -41,6 +51,51 @@
     // toggle the faq page
     faq: function(){
       this.$(".form, .faq_content").toggle();
+    },
+
+    list: function(){
+      this.showingList = !this.showingList;
+      var dom = this.$(".rating_list");
+      dom.toggle(this.showingList);
+      if(this.showingList){
+        // show loading
+        this.loading(dom);
+
+        // get ids of all raters
+        var ratings = (this.requester.user_fields.agent_satisfaction || "").replace(";", "").split(";");
+        var ids = [];
+        for(var x = 0; x < ratings.length; x ++) {
+          ids.push(ratings[x].split(",")[0]);
+        }
+
+        // fetch these users and build html
+        var user, values;
+        var list = "<table><tr><th>Ticket</th><th>Agent</th><th>Rating</th></tr>";
+        this._handleRequest(this.ajax('many', ids.join(",")), function(data){
+          for(var x = 0; x < ratings.length; x ++) {
+            for(var y = 0; y < data.users.length; y ++) {
+              user = data.users[y];
+              values = ratings[x].split(",");
+              if(user.id === parseInt(values[0], 10)){
+                // link to ticket + link to user + rating
+                list += "<tr>";
+                list += "<td><a href='/agent#tikets/"+values[1]+"'>#"+values[1]+"</a></td>";
+                list += "<td><a href='/agent#users/"+values[0]+"'>"+user.name+"</a></td>";
+                list += "<td>" + values[2] +"</td>";
+                list += "</tr>";
+              }
+            }
+          }
+          list += "</table>";
+
+          // fill list
+          dom.html(list);
+        }, this.notifyFail);
+      }
+    },
+
+    loading: function(dom){
+      dom.html("<img src='/images/loading.gif'/>");
     },
 
     rateit: function($){
@@ -135,6 +190,7 @@
       var mine = this.mine();
       var ratings = (this.requester.user_fields.agent_satisfaction || "").replace(new RegExp(mine + "\\d"), "");
       ratings += mine + rating;
+      this.requester.user_fields.agent_satisfaction_average = ratings;
       var average = this.average(ratings);
       this.updateAverage(ratings, average);
 
