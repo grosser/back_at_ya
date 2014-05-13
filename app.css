@@ -24,7 +24,7 @@ table td, table th{
 
 .rating {
   cursor: pointer;
-  margin: 2em;
+  margin: 2em 0;
   clear: both;
   display: block;
 }
@@ -38,14 +38,14 @@ table td, table th{
 }
 .cancel, .star {
   float: left;
-  width: 17px;
-  height: 15px;
+  width: 34px;
+  height: 32px;
   overflow: hidden;
   text-indent: -999em;
   cursor: pointer;
 }
 .star,
-.star a {background: app-asset-url("star.gif") no-repeat 0 0px;}
+.star a {background: app-asset-url("star.png") no-repeat 0 0px;}
 
 .cancel a,
 .star a {
@@ -62,7 +62,7 @@ div.rating div.on a {
 div.rating div.hover a,
 div.rating.mine div.on a,
 div.rating div a:hover {
-  background-position: 0 -16px; // red
+  background-position: 0 -64px; // red
 }
 
 .average-first, .average-overview{
