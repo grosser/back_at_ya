@@ -78,7 +78,10 @@
 
         // fetch these users and build html
         var user, values;
-        var list = "<table><tr><th>Ticket</th><th>Agent</th><th>Rating</th></tr>";
+        var list = "<table><tr>";
+        list += "<th>"+this.I18n.t("heading_ticket") + "</th>";
+        list += "<th>"+this.I18n.t("heading_agent")+"</th>";
+        list += "<th>"+this.I18n.t("heading_rating")+"</th></tr>";
         this._handleRequest(this.ajax('many', ids.join(",")), function(data){
           for(var x = 0; x < ratings.length; x ++) {
             for(var y = 0; y < data.users.length; y ++) {
