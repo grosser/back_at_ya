@@ -43,18 +43,23 @@ Within your Zendesk account (where you are an admin):
 
 ### After Installation
 
-Rating a customer for the first time
+Rating a customer for the first time:
 
- - go to a ticket page
- - From within a ticket, select a rating (from 1 to 5 stars) based on your interaction with the customer
+ - Open a ticket and you'll see the app in the right sidebar
+ - Select a rating (from 1 to 5 stars) based on your interaction with the customer (green stars)
+ - After a customer has been rated at least once, you'll see an agent average (yellow stars) and have the ability to see a list of all the agents that have rated this customer
+ - Yellow stars represent the average rating by fellow agents and green stars represent what you have rated this customer on this ticket
+ - Select “# of Ratings” to see tickets numbers for all ratings this Customer has received
+ - Use “Agent Satisfaction Average” via Good Data to leverage for reporting
+ - Ratings are stored in the user field agent_satisfaction and rating average is stored in agent_satisfaction_average (for views, triggers, reporting).
+ 
+
  - Press the eye of the tiger button to keep motivated for extra awesome customer service.
 
-After a Customer has been rated you will see an agent average and the list of all agents that rated this customer.
 
-Ratings are stored in the user field agent_satisfaction and rating average is stored in agent_satisfaction_average (for views, triggers, reporting).
-Yellow stars represent the average rating by fellow agents. Green stars represent what you have rated this customer on this ticket.
-Select “# of Ratings” to see tickets numbers for all ratings this Customer has received.
-Use “Agent Satisfaction Average” via Good Data to leverage for reporting
+
+
+
 
 ## App location:
 
