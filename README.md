@@ -22,9 +22,9 @@ Error message when misconfigured:<br/>
 ### Rate for any purpose you choose:
  - Measure agent satisfaction by ticket
  - Build an average agent satisfaction score by customer
- - Identify product evangelists
- - Flag a Customer for Rewards or Special Offers
- - Store and report on Average Rating Per Customer
+ - Report on average rating per customer and compare to overall account
+ - Find negative customer interactions and try to improve their support experience 
+ - Identify evangelists through high agent satisfaction scores 
 
 ### Install
 
