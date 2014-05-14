@@ -5,12 +5,15 @@
 ### Install Back@Ya to allow your Agents to rate your customers
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/2670385/Web/asat.png)
-
+![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-unrated.png)
+![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-list.png)
+![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-i18n.png)
+![Error](https://dl.dropboxusercontent.com/u/2670385/Web/asat-error.png)
 
 ### Rate for any purpose you choose:
  - Measure agent satisfaction by ticket
  - Build an average agent satisfaction score by customer
- - Identify product evangelists 
+ - Identify product evangelists
  - Flag a Customer for Rewards or Special Offers
  - Store and report on Average Rating Per Customer
 
