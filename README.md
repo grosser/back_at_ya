@@ -1,28 +1,45 @@
 :warning: *Use of this software is subject to important terms and conditions as set forth in the License file* :warning:
 
-# Agent Satisfaction App
+# Back@Ya ![Logo](https://dl.dropboxusercontent.com/u/2670385/Web/asat-logo.png)
+
+### Install Back@Ya to allow your Agents to Rate your Customers
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/2670385/Web/asat.png)
 
-## Description:
 
-App that let's agents rate users.
+### Rate for any purpose you choose:
+ - Agent Satisfaction with the Customer
+ - Knowledge Level of the Customer
+ - Flag a Customer for Rewards or Special Offers
+ - Store and report on Average Rating Per Customer
 
-An app which uses the below endpoints:
+### Install
 
-* /api/v2/users/{{user_id}}/.json
+Within your Zendesk account:
+
+ - click the gear symbol in the lower left corner.
+ - Select Manage Apps
+ - Download .zip file from http://tinyurl.com/asatapp
+ - Upload .zip file as a new App
+ - Create Custom User Fields: agent_satisfaction (text) and agent_satisfaction_average (decimal)
+
+### After Installation
+
+Rating a Customer for the first time
+
+ - From within a ticket, select a rating (from 1 to 5 stars).
+
+After a Customer has been rated
+
+ - Click a star to choose your rating:
+ - 5 = Very Satisfied
+ - 1 = Very Dissastisfied
+
+Ratings are stored in the user field agent_satisfaction and rating average is stored in agent_satisfaction_average (for views, triggers, reporting).
+Yellow stars represent the average rating by fellow agents. Green stars represent what you have rated this customer on this ticket.
+Select “# of Ratings” to see tickets numbers for all ratings this Customer has received.
+Use “Agent Satisfaction Average” via Good Data to leverage for reporting
 
 ## App location:
 
 * Ticket sidebar
-
-## Set-up/installation instructions:
-
-Download asat.zip, install it, then open a ticket.
-
-## TO-DO FOR README:
-- Download instructions
-- Installation instructions
-- Ideally links to the pages (go to this page, click here, it goes there, fills in, blah)
-- Screenshot of installation
-- Screenshot of app in action
