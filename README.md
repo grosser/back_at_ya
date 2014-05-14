@@ -2,7 +2,7 @@
 
 # Back@Ya ![Logo](https://dl.dropboxusercontent.com/u/2670385/Web/asat-logo.png)
 
-### Install Back@Ya to allow your Agents to rate your customers
+### Install Back@Ya to allow your agents to rate your customers
 
 Unrated view, see average of other agents:<br/>
 ![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-unrated.png)
@@ -19,11 +19,11 @@ Translated in 12 languages:<br/>
 Error message when misconfigured:<br/>
 ![Error](https://dl.dropboxusercontent.com/u/2670385/Web/asat-error.png)
 
-### Rate for any purpose you choose:
- - Measure agent satisfaction by ticket
- - Build an average agent satisfaction score by customer
- - Report on average rating per customer and compare to overall account
- - Find negative customer interactions and try to improve their support experience 
+### Rate customers for any purpose you choose:
+ - Measure agent satisfaction by ticket and build an average agent satisfaction score by individual customer
+ - Report (in Good Data) on agent satisfaction rating by customer and compare to their account
+ - Route negative customer interactions to speciality agents to try and improve their support experience 
+ - Build custom workflows around customers with low or high agent satisfaction scores 
  - Identify evangelists through high agent satisfaction scores 
 
 ### Install
@@ -40,14 +40,14 @@ Within your Zendesk account (where you are an admin):
  -          agent_satisfaction_average (decimal)
  - Once user fields are created, the app is now live, HOWEVER, you must have tickets in your instance in order to be able to rate them
 
-### After Installation
+### After Installation (Note - you must have tickets in your Zendesk in order to rate them) 
 
-Rating a Customer for the first time
+Rating a customer for the first time
 
- - From within a ticket, select a rating (from 1 to 5 stars).
+ - From within a ticket, select a rating (from 1 to 5 stars) based on your interaction with the customer
  - Press the eye of the tiger button to keep motivated for extra awesome customer service.
 
-After a Customer has been rated
+After a Customer has been rated you will see an agent average
 
  - Click a star to choose your rating:
  - 5 = Very Satisfied
