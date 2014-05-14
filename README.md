@@ -48,18 +48,14 @@ Rating a customer for the first time:
  - Open a ticket and you'll see the app in the right sidebar
  - Select a rating (from 1 to 5 stars) based on your interaction with the customer (green stars)
  - After a customer has been rated at least once, you'll see an agent average (yellow stars) and have the ability to see a list of all the agents that have rated this customer
- - Yellow stars represent the average rating by fellow agents and green stars represent what you have rated this customer on this ticket
- - Select “# of Ratings” to see tickets numbers for all ratings this Customer has received
+
+Reporting on Back@Ya:
+ - Select “# of Ratings” to see tickets numbers and agents for all ratings this customer has received
  - Use “Agent Satisfaction Average” via Good Data to leverage for reporting
- - Ratings are stored in the user field agent_satisfaction and rating average is stored in agent_satisfaction_average (for views, triggers, reporting).
+ - Ratings are stored in two user fields which can be used in business rules and with views: agent_satisfaction and rating average is stored in agent_satisfaction_average 
  
 
  - Press the eye of the tiger button to keep motivated for extra awesome customer service.
-
-
-
-
-
 
 ## App location:
 
