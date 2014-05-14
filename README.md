@@ -38,22 +38,18 @@ Within your Zendesk account (where you are an admin):
  - Click on Upload App
  - Upload .zip file as a new App
  - Create Custom User Fields:
- -          agent_satisfaction (text)
- -          agent_satisfaction_average (decimal)
- - Once user fields are created, the app is now live, HOWEVER, you must have tickets in your instance in order to be able to rate them
+ - &nbsp;&nbsp;&nbsp;agent_satisfaction (text)
+ - &nbsp;&nbsp;&nbsp;agent_satisfaction_average (decimal)
 
-### After Installation (Note - you must have tickets in your Zendesk in order to rate them)
+### After Installation
 
 Rating a customer for the first time
 
+ - go to a ticket page
  - From within a ticket, select a rating (from 1 to 5 stars) based on your interaction with the customer
  - Press the eye of the tiger button to keep motivated for extra awesome customer service.
 
-After a Customer has been rated you will see an agent average
-
- - Click a star to choose your rating:
- - 5 = Very Satisfied
- - 1 = Very Dissastisfied
+After a Customer has been rated you will see an agent average and the list of all agents that rated this customer.
 
 Ratings are stored in the user field agent_satisfaction and rating average is stored in agent_satisfaction_average (for views, triggers, reporting).
 Yellow stars represent the average rating by fellow agents. Green stars represent what you have rated this customer on this ticket.
