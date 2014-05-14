@@ -4,10 +4,19 @@
 
 ### Install Back@Ya to allow your Agents to rate your customers
 
+Unrated view, see average of other agents:<br/>
 ![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-unrated.png)
+
+Rated view, see your rating and average:<br/>
 ![Screenshot](https://dl.dropboxusercontent.com/u/2670385/Web/asat.png)
+
+See ratings of other agents:<br/>
 ![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-list.png)
+
+Translated in 12 languages:<br/>
 ![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-i18n.png)
+
+Error message when misconfigured:<br/>
 ![Error](https://dl.dropboxusercontent.com/u/2670385/Web/asat-error.png)
 
 ### Rate for any purpose you choose:
