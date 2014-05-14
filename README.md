@@ -38,8 +38,8 @@ Within your Zendesk account (where you are an admin):
  - Click on Upload App
  - Upload .zip file as a new App
  - Create Custom User Fields:
- - &nbsp;&nbsp;&nbsp;agent_satisfaction (text)
- - &nbsp;&nbsp;&nbsp;agent_satisfaction_average (decimal)
+     - agent_satisfaction (text)
+     - agent_satisfaction_average (decimal)
 
 ### After Installation
 
