@@ -16,13 +16,17 @@
 
 ### Install
 
-Within your Zendesk demo (where you are an admin) account:
+Within your Zendesk account (where you are an admin):
 
- - Click the gear symbol in the lower left corner.
- - Select Manage Apps
  - Download .zip file from http://tinyurl.com/asatapp
+ - Click the gear symbol in the lower left corner
+ - Under the Apps menu, select Manage Apps
+ - Click on Upload App
  - Upload .zip file as a new App
- - Create Custom User Fields: agent_satisfaction (text) and agent_satisfaction_average (decimal)
+ - Create Custom User Fields: 
+ -          agent_satisfaction (text) 
+ -          agent_satisfaction_average (decimal)
+ - Once user fields are created, the app is now live, HOWEVER, you must have tickets in your instance in order to be able to rate them
 
 ### After Installation
 
