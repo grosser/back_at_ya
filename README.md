@@ -16,7 +16,7 @@
 
 ### Install
 
-Within your Zendesk account:
+Within your Zendesk demo (where you are an admin) account:
 
  - Click the gear symbol in the lower left corner.
  - Select Manage Apps
