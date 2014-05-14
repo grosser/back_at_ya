@@ -2,6 +2,8 @@
 
 # Agent Satisfaction App
 
+![Screenshot](https://dl.dropboxusercontent.com/u/2670385/Web/asat.png)
+
 ## Description:
 
 App that let's agents rate users.
@@ -18,9 +20,9 @@ An app which uses the below endpoints:
 
 Download asat.zip, install it, then open a ticket.
 
-## TO-DO FOR README: 
-- Download instructions 
-- Installation instructions 
-- Ideally links to the pages (go to this page, click here, it goes there, fills in, blah) 
-- Screenshot of installation 
-- Screenshot of app in action 
+## TO-DO FOR README:
+- Download instructions
+- Installation instructions
+- Ideally links to the pages (go to this page, click here, it goes there, fills in, blah)
+- Screenshot of installation
+- Screenshot of app in action
