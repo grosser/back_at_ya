@@ -2,14 +2,15 @@
 
 # Back@Ya ![Logo](https://dl.dropboxusercontent.com/u/2670385/Web/asat-logo.png)
 
-### Install Back@Ya to allow your Agents to Rate your Customers
+### Install Back@Ya to allow your Agents to rate your customers
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/2670385/Web/asat.png)
 
 
 ### Rate for any purpose you choose:
- - Agent Satisfaction with the Customer
- - Knowledge Level of the Customer
+ - Measure agent satisfaction by ticket
+ - Build an average agent satisfaction score by customer
+ - Identify product evangelists 
  - Flag a Customer for Rewards or Special Offers
  - Store and report on Average Rating Per Customer
 
@@ -17,7 +18,7 @@
 
 Within your Zendesk account:
 
- - click the gear symbol in the lower left corner.
+ - Click the gear symbol in the lower left corner.
  - Select Manage Apps
  - Download .zip file from http://tinyurl.com/asatapp
  - Upload .zip file as a new App
