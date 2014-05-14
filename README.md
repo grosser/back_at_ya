@@ -50,11 +50,12 @@ Rating a customer for the first time:
  - After a customer has been rated at least once, you'll see an agent average (yellow stars) and have the ability to see a list of all the agents that have rated this customer
 
 Reporting on Back@Ya:
+
  - Select “# of Ratings” to see tickets numbers and agents for all ratings this customer has received
  - Use “Agent Satisfaction Average” via Good Data to leverage for reporting
- - Ratings are stored in two user fields which can be used in business rules and with views: agent_satisfaction and rating average is stored in agent_satisfaction_average 
- 
-## Special agent motivation easter egg: 
+ - Ratings are stored in two user fields which can be used in business rules and with views: agent_satisfaction and rating average is stored in agent_satisfaction_average
+
+## Special agent motivation easter egg:
  - Press the eye of the tiger button to keep motivated for extra awesome customer service.
 
 ## App location:
