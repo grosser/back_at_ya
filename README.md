@@ -29,6 +29,7 @@ Within your Zendesk account:
 Rating a Customer for the first time
 
  - From within a ticket, select a rating (from 1 to 5 stars).
+ - Press the eye of the tiger button to keep motivated for extra awesome customer service.
 
 After a Customer has been rated
 
