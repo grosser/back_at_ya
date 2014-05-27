@@ -30,7 +30,6 @@
 
     events: {
       'app.activated': 'init',
-      'click img.play': 'play',
       'click .faq': 'faq',
       'click .list_ratings': 'list'
     },
@@ -103,17 +102,6 @@
           dom.html(list);
         }, this.notifyFail);
       }
-    },
-
-    play: function(){
-      var audio = this.$(".eye")[0];
-      if(this.playing){
-        audio.pause();
-      } else {
-        audio.load(); // rewind
-        audio.play();
-      }
-      this.playing = !this.playing;
     },
 
     loading: function(dom){

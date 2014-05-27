@@ -1,9 +1,5 @@
 <header>
-  <audio class="eye">
-    <source src="{{assetURL "eye.ogg"}}" type="audio/ogg" />
-  </audio>
   <span class="logo" title="{{setting "name"}}"/>
-  <img src="{{assetURL "eye.jpg"}}" class="play"/>
   <span class="faq">?</span>
   <h3 class="heading"></h3>
 </header>

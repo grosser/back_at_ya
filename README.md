@@ -56,9 +56,6 @@ Reporting on Back@Ya:
  - Use “Agent Satisfaction Average” via Good Data to leverage for reporting
  - Ratings are stored in two user fields which can be used in business rules and with views: agent_satisfaction and rating average is stored in agent_satisfaction_average
 
-### Special agent motivation easter egg:
- - Press the eye of the tiger button to keep motivated for extra awesome customer service.
-
 ### App location:
 
 * Ticket sidebar
