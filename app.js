@@ -89,8 +89,8 @@
               if(user.id === parseInt(values[0], 10)){
                 // link to ticket + link to user + rating
                 list += "<tr>";
-                list += "<td><a href='/agent#tikets/"+values[1]+"'>#"+values[1]+"</a></td>";
-                list += "<td><a href='/agent#users/"+values[0]+"'>"+user.name+"</a></td>";
+                list += "<td><a href='/agent/#/tickets/"+values[1]+"'>#"+values[1]+"</a></td>";
+                list += "<td><a href='/agent/#/users/"+values[0]+"'>"+user.name+"</a></td>";
                 list += "<td>" + values[2] +"</td>";
                 list += "</tr>";
               }
