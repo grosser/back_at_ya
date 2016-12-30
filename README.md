@@ -1,6 +1,6 @@
 :warning: *Use of this software is subject to important terms and conditions as set forth in the License file* :warning:
 
-# Back@Ya ![Logo](https://dl.dropboxusercontent.com/u/2670385/Web/asat-logo.png)
+# Back@Ya ![Logo](github/logo.png?raw=true)
 
 ### Install Back@Ya to allow your agents to rate your customers
 
@@ -14,19 +14,19 @@
 ### Demo
 
 Unrated view, see average of other agents:<br/>
-![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-unrated.png)
+![I18n](github/unrated.png?raw=true)
 
 Rated view, see your rating and average:<br/>
-![Screenshot](https://dl.dropboxusercontent.com/u/2670385/Web/asat.png)
+![Screenshot](github/rating.png?raw=true)
 
 See ratings of other agents:<br/>
-![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-list.png)
+![I18n](github/list.png?raw=true)
 
 Translated in 12 languages:<br/>
-![I18n](https://dl.dropboxusercontent.com/u/2670385/Web/asat-i18n.png)
+![I18n](github/i18n.png?raw=true)
 
 Error message when misconfigured:<br/>
-![Error](https://dl.dropboxusercontent.com/u/2670385/Web/asat-error.png)
+![Error](github/error.png?raw=true)
 
 ### Install
 
