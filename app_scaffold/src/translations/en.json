@@ -5,7 +5,6 @@
     "long_description": "Agents can rate users",
     "installation_instructions": "Add <b>text agent_satisfaction</b> and <b>decimal agent_satisfaction_average</b> user fields."
   },
-  "field_error": "<h3>Error</h3>You must add <b>text agent_satisfaction</b> and <b>decimal agent_satisfaction_average</b> user fields.",
   "give_it_stars": "Give it",
   "average": "Average",
   "ratings": "Ratings",
