@@ -1,6 +1,0 @@
-<header>
-  <span class="logo" title="{{setting "name"}}"/>
-  <span class="faq">?</span>
-  <h3 class="heading"></h3>
-</header>
-<section data-main/>

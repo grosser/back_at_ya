@@ -1,0 +1,9 @@
+{
+  "_warning": "AUTOMATICALLY GENERATED FROM src/translations/en.json - DO NOT MODIFY THIS FILE DIRECTLY",
+  "app": {
+    "name": "Agent Satisfaction App",
+    "short_description": "Agents can rate users",
+    "long_description": "Agents can rate users",
+    "installation_instructions": "Add text agent_satisfaction and decimal agent_satisfaction_average user fields."
+  }
+}
