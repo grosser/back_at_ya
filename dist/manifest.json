@@ -1,0 +1,17 @@
+{
+  "name": "Agent Satisfaction App",
+  "author": {
+    "name": "Team-M",
+    "email": "mgrosser@zendesk.com",
+    "url": "https://github.com/grosser"
+  },
+  "defaultLocale": "en",
+  "private": false,
+  "location": {
+    "support": {
+      "ticket_sidebar": "assets/index.html"
+    }
+  },
+  "version": "1.0",
+  "frameworkVersion": "2.0"
+}

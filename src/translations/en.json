@@ -1,0 +1,17 @@
+{
+  "app": {
+    "short_description": "Agents can rate users",
+    "name": "Agent Satisfaction App",
+    "long_description": "Agents can rate users",
+    "installation_instructions": "Add text agent_satisfaction and decimal agent_satisfaction_average user fields."
+  },
+  "give_it_stars": "Give it",
+  "average": "Average",
+  "ratings": "Ratings",
+  "rate_requester": "Rate: ",
+  "rate_success": "Rating saved",
+  "rate_error_request": "Error saving rating",
+  "heading_ticket": "Ticket",
+  "heading_agent": "Agent",
+  "heading_rating": "Rating"
+}
