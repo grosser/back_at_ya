@@ -3,10 +3,22 @@
   "author": {
     "name": "Team-M",
     "email": "mgrosser@zendesk.com"
+    "url": "https://github.com/grosser"
   },
   "defaultLocale": "en",
-  "private": true,
-  "location": "ticket_sidebar",
+  "private": false,
+  "location": {
+    "support": {
+      "background": "assets/iframe.html",
+      "ticket_sidebar": {
+        "autoLoad": false
+      },
+      "top_bar": {
+        "autoHide": true,
+        "url": "assets/top_bar.html"
+      }
+    }
+  },
   "version": "1.0",
-  "frameworkVersion": "1.0"
+  "frameworkVersion": "2.0"
 }

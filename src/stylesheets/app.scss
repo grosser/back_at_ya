@@ -1,3 +1,18 @@
+section[data-main] {
+  overflow: hidden;
+}
+
+.spinner {
+  background: transparent no-repeat center;
+  display: block;
+  margin: 15px auto;
+
+  &.dotted {
+    background-image: url('../images/spinner.gif');
+    height: 11px;
+  }
+}
+
 .rating_list{
   padding-top: 10px;
 }
@@ -10,27 +25,12 @@ table td, table th{
   padding-right: 10px;
 }
 
-.faq{
-  float: right;
-  width: 15px;
-  line-height: 26px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.play {
-  float: right;
-  height: 25px;
-  margin-right: 8px;
-}
-
-.faq_content, .rating_list, .field_error {
+.rating_list {
   display: none;
 }
 
 .rating {
   cursor: pointer;
-  margin: 2em 0;
   clear: both;
   display: block;
 }
@@ -51,7 +51,7 @@ table td, table th{
   cursor: pointer;
 }
 .star,
-.star a {background: app-asset-url("star.png") no-repeat 0 0px;}
+.star a {background: url('../images/star.png') no-repeat 0 0px;}
 
 .cancel a,
 .star a {
@@ -71,6 +71,14 @@ div.rating div a:hover {
   background-position: 0 -64px; // red
 }
 
-.average-first, .average-overview{
+.average-overview{
   display: none;
+}
+
+.rating, .average-overview {
+  float: left;
+}
+
+.average-overview {
+  margin-top: 10px;
 }

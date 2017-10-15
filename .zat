@@ -1,7 +1,4 @@
 {
-  "subdomain": "http://support.zendesk.dev",
-  "username": "agent@zendesk.com",
-  "app_id": 81,
   "zat_latest": "2.6.0",
   "zat_update_check": "2017-10-15"
 }

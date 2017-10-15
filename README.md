@@ -63,5 +63,14 @@ Reporting on Back@Ya:
 ### Development
 
  - install [zat](https://developer.zendesk.com/apps/docs/agent/tools) via `gem i zendesk_apps_tools`
- - `zat server` + `?zat=true` to try out locally hosted version 
- - `npm install -g jshint && ./zip.sh` to make a new release
+ - `webpack --watch` + `zat server --path=./dist` + `?zat=true` to try out locally hosted version 
+ - `zat package` to make a new release
+
+### TODO:
+ - notifications when requests fail
+ - cleanup
+ - more idematic v2 code
+ - figure out why default resize did not work
+ - remove redundant code from index.js
+ - show that ratings are loading with an indicator
+ - get tests running maybe for basic math
