@@ -32,7 +32,7 @@ Error message when misconfigured:<br/>
 
 Within your Zendesk account (where you are an admin):
 
- - Download .zip file from http://tinyurl.com/asatapp
+ - [Download .zip file](https://github.com/grosser/back_at_ya/raw/master/back_at_ya.zip)
  - Click the gear symbol in the lower left corner
  - Under the Apps menu, select Manage Apps
  - Click on Upload App
@@ -59,3 +59,9 @@ Reporting on Back@Ya:
 ### App location:
 
 * Ticket sidebar
+
+### Development
+
+ - install [zat](https://developer.zendesk.com/apps/docs/agent/tools) via `gem i zendesk_apps_tools`
+ - `zat server` + `?zat=true` to try out locally hosted version 
+ - `npm install -g jshint && ./zip.sh` to make a new release
