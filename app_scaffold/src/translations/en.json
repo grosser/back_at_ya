@@ -1,21 +1,18 @@
 {
   "app": {
-    "short_description": "add your app short description here. max 80 characters",
-    "name": "add your app name here",
-    "long_description": "add your app long description here. max 3000 characters",
-    "installation_instructions": "add your app installation instructions here. max 3000 characters" 
+    "short_description": "Agents can rate users",
+    "name": "Agent Satisfaction App",
+    "long_description": "Agents can rate users",
+    "installation_instructions": "Add <b>text agent_satisfaction</b> and <b>decimal agent_satisfaction_average</b> user fields."
   },
-
-  "hello": "Hello {{name}}!",
-
-  "save": {
-    "button": "Bookmark ticket #{{id}}",
-    "success": "Bookmarked ticket #{{id}}",
-    "error": "Sorry, something went wrong."
-  },
-
-  "learn_more": {
-    "message": "To learn more, {{link}}",
-    "link_text": "see the Zendesk forums"
-  }
+  "field_error": "<h3>Error</h3>You must add <b>text agent_satisfaction</b> and <b>decimal agent_satisfaction_average</b> user fields.",
+  "give_it_stars": "Give it",
+  "average": "Average",
+  "ratings": "Ratings",
+  "rate_requester": "Rate: ",
+  "rate_success": "Rating saved",
+  "rate_error_request": "Error saving rating",
+  "heading_ticket": "Ticket",
+  "heading_agent": "Agent",
+  "heading_rating": "Rating"
 }

@@ -14,21 +14,18 @@ var App = {
   },
 
   events: {
-    "app.created": "init",
-    "app.willDestroy": "logClosedApp"
+    "app.activated": "init",
+    // 'click .list_ratings': 'list'
   },
 
   async init() {
-    const data = await this.ajax("getMe");
-    this.renderMain(data);
-  },
-
-  renderMain({ user }) {
-    this.switchTo("main", user);
-  },
-
-  logClosedApp() {
-    console.log("About to close the app.");
+    const client = ZAFClient.init();
+    const response = await client.get('ticket.requester')
+    if(response['ticket.requester']) {
+      this.switchTo("main");
+    } else {
+      this.switchTo("error", {error: "NO REQUESTER"});
+    }
   }
 };
 
