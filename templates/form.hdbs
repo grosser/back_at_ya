@@ -5,9 +5,11 @@
     <div class="average-overview">
       {{t "average"}} <span class="average"/> / <a class="list_ratings"><span class="ratings_count"/> {{t "ratings"}}</a>
     </div>
+    <!--
     <div class="average-first">
       {{t "be_the_first_to_rate"}}
     </div>
+    -->
     <div class="rating_list"></div>
     </div>
     <div class="faq_content">
