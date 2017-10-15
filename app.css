@@ -30,7 +30,6 @@ table td, table th{
 
 .rating {
   cursor: pointer;
-  margin: 2em 0;
   clear: both;
   display: block;
 }
@@ -73,4 +72,12 @@ div.rating div a:hover {
 
 .average-first, .average-overview{
   display: none;
+}
+
+/* make both show on the same line */
+.average-overview, .rating {
+  float: left;
+}
+.average-overview {
+  margin-top: 12px;
 }
